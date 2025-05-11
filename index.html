@@ -6,100 +6,176 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>John Doe | DevOps Engineer Portfolio</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f4f7fa;
             color: #333;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Section */
         header {
-            background-color: #2a3d66;
+            background-color: #1e2a47;
             color: white;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
+            font-size: 3em;
             margin: 0;
-            font-size: 2.5em;
         }
 
         header p {
-            margin: 10px 0;
             font-size: 1.2em;
+            margin: 10px 0;
+            font-weight: 300;
         }
 
+        /* Navigation Bar */
         nav {
-            background-color: #3b4c73;
+            background-color: #2c3e50;
             display: flex;
             justify-content: center;
             padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
             color: white;
             margin: 0 20px;
-            text-decoration: none;
             font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            border-bottom: 2px solid #ff6f61;
+            color: #e74c3c;
         }
 
+        /* Section Styling */
         section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 1200px;
             margin: auto;
         }
 
         section h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            color: #34495e;
         }
 
-        .skills, .projects, .experience, .contact {
+        /* Skills Section */
+        .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
-            justify-content: space-around;
+            justify-content: center;
+            margin-top: 40px;
         }
 
         .card {
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             width: 280px;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .card h3 {
-            font-size: 1.4em;
+            font-size: 1.6em;
+            color: #2c3e50;
             margin-bottom: 10px;
         }
 
         .card p {
-            font-size: 1em;
-            color: #555;
+            font-size: 1.1em;
+            color: #7f8c8d;
         }
 
+        /* Project Section */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 25px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card h3 {
+            font-size: 1.6em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-info div {
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 1.6em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
         footer {
-            background-color: #2a3d66;
+            background-color: #1e2a47;
             color: white;
             text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 1em;
+            margin: 0;
         }
 
         footer a {
-            color: #ff6f61;
-            text-decoration: none;
+            color: #e74c3c;
+            font-weight: bold;
         }
 
         footer a:hover {
@@ -110,11 +186,13 @@
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <h1>John Doe</h1>
-        <p>DevOps Engineer | Automation Specialist | Cloud Enthusiast</p>
+        <p>Experienced DevOps Engineer | Cloud Specialist | Automation Advocate</p>
     </header>
 
+    <!-- Navigation Bar -->
     <nav>
         <a href="#about">About Me</a>
         <a href="#skills">Skills</a>
@@ -126,72 +204,72 @@
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I'm a passionate and experienced DevOps engineer with over 5 years of expertise in automating infrastructure, continuous integration, and delivering scalable solutions. I specialize in cloud computing, containerization, and CI/CD pipeline design. I believe in collaborating with teams to build highly efficient, reliable, and scalable systems that enable continuous delivery of applications.</p>
+        <p>I am a passionate DevOps engineer with over 5 years of experience automating cloud infrastructure, building CI/CD pipelines, and ensuring seamless delivery of applications. My expertise lies in containerization, infrastructure as code (IaC), and cloud solutions that enhance performance and scalability. I thrive on optimizing systems to deliver value rapidly and securely.</p>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2>Skills</h2>
+        <h2>Technical Skills</h2>
         <div class="skills">
             <div class="card">
                 <h3>Cloud Platforms</h3>
                 <p>AWS, Google Cloud, Microsoft Azure</p>
             </div>
             <div class="card">
-                <h3>Automation & Configuration</h3>
-                <p>Terraform, Ansible, Chef, Puppet</p>
-            </div>
-            <div class="card">
-                <h3>Containerization & Orchestration</h3>
-                <p>Docker, Kubernetes, ECS, EKS</p>
+                <h3>Infrastructure Automation</h3>
+                <p>Terraform, Ansible, Puppet, Chef</p>
             </div>
             <div class="card">
                 <h3>CI/CD Tools</h3>
-                <p>Jenkins, GitLab CI, CircleCI, TravisCI</p>
+                <p>Jenkins, GitLab CI, CircleCI, Travis CI</p>
+            </div>
+            <div class="card">
+                <h3>Containerization</h3>
+                <p>Docker, Kubernetes, ECS, EKS</p>
+            </div>
+            <div class="card">
+                <h3>Scripting & Languages</h3>
+                <p>Python, Bash, Shell, Go</p>
             </div>
             <div class="card">
                 <h3>Version Control</h3>
-                <p>Git, GitHub, GitLab, Bitbucket</p>
-            </div>
-            <div class="card">
-                <h3>Scripting & Programming</h3>
-                <p>Python, Bash, Shell Scripting</p>
+                <p>Git, GitHub, Bitbucket</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="projects">
-            <div class="card">
+            <div class="project-card">
                 <h3>CI/CD Pipeline for Microservices</h3>
-                <p>Designed and implemented a robust CI/CD pipeline for microservices using Jenkins, Docker, and Kubernetes, automating deployment to AWS.</p>
+                <p>Designed a robust CI/CD pipeline for deploying microservices using Jenkins, Docker, and Kubernetes, automated with AWS services.</p>
             </div>
-            <div class="card">
-                <h3>Infrastructure as Code with Terraform</h3>
-                <p>Built scalable and automated infrastructure on AWS using Terraform, ensuring consistent and reproducible environment provisioning.</p>
+            <div class="project-card">
+                <h3>Terraform Infrastructure</h3>
+                <p>Created scalable infrastructure as code using Terraform to automate provisioning of AWS resources for high-availability applications.</p>
             </div>
-            <div class="card">
-                <h3>Monitoring & Logging with ELK Stack</h3>
-                <p>Configured a centralized logging system using Elasticsearch, Logstash, and Kibana to collect, process, and visualize logs across systems.</p>
+            <div class="project-card">
+                <h3>ELK Stack Implementation</h3>
+                <p>Implemented centralized logging and monitoring using Elasticsearch, Logstash, and Kibana (ELK Stack) to optimize log analysis and alerting.</p>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience">
-            <div class="card">
+        <h2>Professional Experience</h2>
+        <div class="projects">
+            <div class="project-card">
                 <h3>Senior DevOps Engineer | TechCorp</h3>
                 <p>Jan 2020 - Present</p>
-                <p>Led the DevOps transformation within the company, migrated legacy infrastructure to AWS, automated deployment pipelines, and implemented monitoring and alerting solutions.</p>
+                <p>Led the transition to cloud infrastructure using AWS and Terraform, built automated deployment pipelines, and implemented monitoring solutions to ensure system reliability.</p>
             </div>
-            <div class="card">
+            <div class="project-card">
                 <h3>DevOps Engineer | InnovateTech</h3>
                 <p>May 2017 - Dec 2019</p>
-                <p>Designed and maintained CI/CD pipelines, worked with Docker and Kubernetes, and supported the team with infrastructure automation tasks.</p>
+                <p>Designed and maintained CI/CD pipelines, optimized containerized deployments with Docker and Kubernetes, and automated system updates and scaling.</p>
             </div>
         </div>
     </section>
@@ -199,14 +277,26 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>If you'd like to get in touch for collaboration or discuss any opportunities, feel free to contact me.</p>
-        <p>Email: <a href="mailto:johndoe@example.com">johndoe@example.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
-        <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
+        <p>If you'd like to discuss opportunities or collaborations, feel free to reach out to me through the following channels:</p>
+        <div class="contact-info">
+            <div>
+                <h3>Email</h3>
+                <p><a href="mailto:johndoe@example.com">johndoe@example.com</a></p>
+            </div>
+            <div>
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+            </div>
+            <div>
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 John Doe. All rights reserved.</p>
+        <p>&copy; 2025 John Doe. All rights reserved. | <a href="#contact">Contact Me</a></p>
     </footer>
 
 </body>
