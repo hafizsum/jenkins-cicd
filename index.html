@@ -4,52 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Simple Website</title>
+    <title>John Doe | DevOps Engineer Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
         }
 
         header {
-            background-color: #333;
+            background-color: #2a3d66;
             color: white;
-            padding: 15px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
         nav {
-            background-color: #444;
+            background-color: #3b4c73;
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 12px 0;
         }
 
         nav a {
             color: white;
             margin: 0 20px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 1.1em;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            border-bottom: 2px solid #ff6f61;
         }
 
-        .content {
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .skills, .projects, .experience, .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
             padding: 20px;
-            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #555;
         }
 
         footer {
-            background-color: #333;
+            background-color: #2a3d66;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
+            padding: 20px;
+            position: relative;
             bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
     </style>
@@ -57,43 +111,103 @@
 <body>
 
     <header>
-        <h1>Welcome to My Website</h1>
-        <p>Your go-to place for amazing content!</p>
+        <h1>John Doe</h1>
+        <p>DevOps Engineer | Automation Specialist | Cloud Enthusiast</p>
     </header>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="content">
-        <section id="home">
-            <h2>Home Section</h2>
-            <p>This is the home section where you can provide an introduction to your website.</p>
-        </section>
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a passionate and experienced DevOps engineer with over 5 years of expertise in automating infrastructure, continuous integration, and delivering scalable solutions. I specialize in cloud computing, containerization, and CI/CD pipeline design. I believe in collaborating with teams to build highly efficient, reliable, and scalable systems that enable continuous delivery of applications.</p>
+    </section>
 
-        <section id="about">
-            <h2>About Section</h2>
-            <p>In this section, you can talk about the purpose of your website or your background.</p>
-        </section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="card">
+                <h3>Cloud Platforms</h3>
+                <p>AWS, Google Cloud, Microsoft Azure</p>
+            </div>
+            <div class="card">
+                <h3>Automation & Configuration</h3>
+                <p>Terraform, Ansible, Chef, Puppet</p>
+            </div>
+            <div class="card">
+                <h3>Containerization & Orchestration</h3>
+                <p>Docker, Kubernetes, ECS, EKS</p>
+            </div>
+            <div class="card">
+                <h3>CI/CD Tools</h3>
+                <p>Jenkins, GitLab CI, CircleCI, TravisCI</p>
+            </div>
+            <div class="card">
+                <h3>Version Control</h3>
+                <p>Git, GitHub, GitLab, Bitbucket</p>
+            </div>
+            <div class="card">
+                <h3>Scripting & Programming</h3>
+                <p>Python, Bash, Shell Scripting</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="services">
-            <h2>Services Section</h2>
-            <p>Here, you can list the services you provide or what you specialize in.</p>
-        </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="card">
+                <h3>CI/CD Pipeline for Microservices</h3>
+                <p>Designed and implemented a robust CI/CD pipeline for microservices using Jenkins, Docker, and Kubernetes, automating deployment to AWS.</p>
+            </div>
+            <div class="card">
+                <h3>Infrastructure as Code with Terraform</h3>
+                <p>Built scalable and automated infrastructure on AWS using Terraform, ensuring consistent and reproducible environment provisioning.</p>
+            </div>
+            <div class="card">
+                <h3>Monitoring & Logging with ELK Stack</h3>
+                <p>Configured a centralized logging system using Elasticsearch, Logstash, and Kibana to collect, process, and visualize logs across systems.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Section</h2>
-            <p>If visitors want to get in touch with you, provide contact details here!</p>
-        </section>
-    </div>
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience">
+            <div class="card">
+                <h3>Senior DevOps Engineer | TechCorp</h3>
+                <p>Jan 2020 - Present</p>
+                <p>Led the DevOps transformation within the company, migrated legacy infrastructure to AWS, automated deployment pipelines, and implemented monitoring and alerting solutions.</p>
+            </div>
+            <div class="card">
+                <h3>DevOps Engineer | InnovateTech</h3>
+                <p>May 2017 - Dec 2019</p>
+                <p>Designed and maintained CI/CD pipelines, worked with Docker and Kubernetes, and supported the team with infrastructure automation tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch for collaboration or discuss any opportunities, feel free to contact me.</p>
+        <p>Email: <a href="mailto:johndoe@example.com">johndoe@example.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+        <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 My Simple Website. All rights reserved.</p>
+        <p>&copy; 2025 John Doe. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-
