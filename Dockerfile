@@ -4,15 +4,11 @@ FROM python:3.10-slim
 # Set working directory
 WORKDIR /app
 
-# Copy your application code into the container
-COPY . .
+# Copy your static HTML file into the container
+COPY index.html /app/index.html
 
-# Install dependencies (optional: add requirements.txt if available)
-# RUN pip install -r requirements.txt
-
-# Expose port
+# Expose port (default HTTP port)
 EXPOSE 8000
 
-# Command to run your app
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-
+# Command to run the Python HTTP server
+CMD ["python", "-m", "http.server", "8000", "--bind", "0.0.0.0"]
