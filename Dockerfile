@@ -11,8 +11,8 @@ COPY . .
 # RUN pip install -r requirements.txt
 
 # Expose port
-EXPOSE 8080
+EXPOSE 8000
 
 # Command to run your app
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
