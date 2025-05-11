@@ -1,2 +1,18 @@
-Expose 8080
-CMD ["runserver","0.0.0.0:8080"]
+# Base image
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy your application code into the container
+COPY . .
+
+# Install dependencies (optional: add requirements.txt if available)
+# RUN pip install -r requirements.txt
+
+# Expose port
+EXPOSE 8080
+
+# Command to run your app
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
+
