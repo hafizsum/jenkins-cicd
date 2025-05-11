@@ -2,27 +2,31 @@ pipeline {
     agent any
 
     triggers {
-        githubPush()  // Triggers build on GitHub push
+        githubPush()  // Automatically trigger on GitHub push
     }
 
     environment {
-        BRANCH_NAME = "${env.GIT_BRANCH ?: 'main'}"
+        BRANCH_NAME = "${env.BRANCH_NAME ?: 'main'}"
+        REPO_URL = 'https://github.com/hafizsum/jenkins-cicd.git'
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                echo "Checking out code from GitHub repository: ${env.GIT_URL}"
-                git branch: 'main', url: 'https://github.com/hafizsum/jenkins-cicd.git'
+                echo "Checking out code from ${REPO_URL}, branch: ${BRANCH_NAME}"
+                git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
             }
         }
 
         stage('Prepare Scripts') {
             steps {
                 script {
-                    // Make sure build.sh, run-tests.sh, and deploy.sh are executable
-                    echo "Setting execute permissions on scripts..."
-                    sh 'chmod +x ./build.sh ./run-tests.sh ./deploy.sh'
+                    echo "Setting execute permissions on scripts if they exist..."
+                    sh '''
+                        [ -f build.sh ] && chmod +x build.sh
+                        [ -f run-tests.sh ] && chmod +x run-tests.sh
+                        [ -f deploy.sh ] && chmod +x deploy.sh
+                    '''
                 }
             }
         }
@@ -30,7 +34,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building the code from branch: ${BRANCH_NAME}"
-                // Replace with your actual build command
                 sh './build.sh'
             }
         }
@@ -38,7 +41,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Running tests..."
-                // Replace with your test command
                 sh './run-tests.sh'
             }
         }
@@ -48,8 +50,7 @@ pipeline {
                 branch 'main'
             }
             steps {
-                echo "Deploying application..."
-                // Replace with your deployment command
+                echo "Deploying application from main branch..."
                 sh './deploy.sh'
             }
         }
@@ -58,13 +59,12 @@ pipeline {
     post {
         always {
             echo "Cleaning up after the pipeline run..."
-            // You can add any cleanup steps here if needed
         }
         success {
-            echo "Pipeline executed successfully!"
+            echo "✅ Pipeline executed successfully!"
         }
         failure {
-            echo "Pipeline failed. Check the logs for details."
+            echo "❌ Pipeline failed. Check logs for errors."
         }
     }
 }
